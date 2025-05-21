@@ -1,0 +1,11 @@
+Props are passed in compnents the are passed like objects
+we can pass function Card(props){
+
+then we have to access with {props.a} or {props.ab}
+}
+or we can simply pass function Card({a="vansh" -(this is default value)-,ab})
+there where we have access them just simply write <h1>vasnhs {a}<h1>
+
+--we can pass objects arrays in props
+"These curky brackets are imp while we initialize direct user or we use props in function
+Value Initialization is in main jsx file jaha wo call ho rha h jabhi sabki val diff aayegi hr ek ke saath alag alag value bhejenge
