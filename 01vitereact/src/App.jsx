@@ -3,7 +3,7 @@ function App() {
   let user="JAAT SMAJ"
   return (
     <>
-    <h3>helloso {user}</h3>
+    <h3 cl>helloso {user}</h3>
     <Chai/>
     </>
   )

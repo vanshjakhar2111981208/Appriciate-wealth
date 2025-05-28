@@ -14,7 +14,7 @@ function App() {
   
   return (
     <>
-      <h1 className='bg-green-300 text-black p-4 m-8 rounded-2xl m-4'>Tailwind test</h1>
+      <h1 className='bg-green-300 text-black p-4  rounded-2xl m-4 '>Tailwind test</h1>
       <Card user="CHAI" Objs={obj} AR={arr} btn="Click me"/>
       <Card user="VANSH J" />
       <Bacard aa="VHM" x={obj}/>

@@ -1,0 +1,56 @@
+onClick={} it wants that we have to pass a function or function name inside curly braces
+we can also do callback function directly while calling onClick={()=>setColor("blue")}
+setColor is a usestate
+
+---------------------------------
+
+Props are passed in compnents the are passed like objects
+we can pass function Card(props){
+
+then we have to access with {props.a} or {props.ab}
+}
+or we can simply pass function Card({a="vansh" -(this is default value)-,ab})
+there where we have access them just simply write <h1>vasnhs {a}<h1>
+
+--we can pass objects arrays in props
+"These curky brackets are imp while we initialize direct user or we use props in function
+Value Initialization is in main jsx file jaha wo call ho rha h jabhi sabki val diff aayegi hr ek ke saath alag alag value bhejenge
+
+onChange={(e)=>{setnumberAlw((prev)=>!prev)}} // we can fire them and we can get access to the previous value here prev is false so '!prev' will do it to true
+
+->konsi value kb render hogi its in reacts hand chahe wo usestate ke throuh ho chahe setValue
+
+useCallback->keeps a function in cache agr dubara run kru toh jitna part uska use hota h usse run krlo or jo extra h wo react ki headache
+useCallback(fn,dependency)  fn-function dependency-array form
+
+  ----------------------------------------------------------
+
+const [length, setLength] = useState(8)
+  const [numberAlw,setnumberAlw]=useState(false);
+  const [charAlw,setcharAlw]=useState(false);
+  const [pass,setpass]=useState();
+
+  const passGenerator= useCallback(()=>{
+    let pass=""
+    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    if(numberAlw) str+="0123456789"
+    if(charAlw) str+="{}!@#$%^&*[]-_"
+    for(let i=1;i<=length;i++){
+      let char =Math.floor(Math.random()*str.length+1);
+      pass+=str.charAt(char);
+    }
+    setpass(pass); //set new password in pass using setpass()
+  },[length,numberAlw,charAlw]);//keep all them in cache
+//useCallback is jaha jaha dependency h jinpe wo run hoga aap us method ko optimize krega// main work optimisation
+
+  useEffect(()=>{
+    passGenerator();
+  },[length,numberAlw,charAlw,passGenerator])//dependency array
+  //yaha hum baat kr rhe h dependency array me jo bhi ched chad ho toh useEffect ko run kro direct run krdo (main purpose passGenerator() ko run krna)
+
+  ------------------------------------------------------
+  useRef-> when we have to take reference of anything
+  const passRef=useRef(null);
+
+ //can be present anywhere > ref(passRef) //it directly connect it with useRef
+  
